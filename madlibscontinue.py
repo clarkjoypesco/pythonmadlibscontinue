@@ -1,8 +1,9 @@
 # Investigating adding and appending to lists
 # If you run the following four lines of codes, what are list1 and list2?
 
-list1 = [1,2,3,4]
-list2 = [1,2,3,4]
+import random
+list1 = [1, 2, 3, 4]
+list2 = [1, 2, 3, 4]
 
 list1 = list1 + [5, 6]
 list2.append([5, 6])
@@ -15,13 +16,13 @@ print list2
 
 
 # What is the difference between these two pieces of code?
-list1 = [1,2,3,4,5]
-list2 = [1,2,3,4,5]
+list1 = [1, 2, 3, 4, 5]
+list2 = [1, 2, 3, 4, 5]
+
 
 def proc(mylist):
     mylist = mylist + [6, 7]
-  
-   
+
 
 def proc2(mylist):
     mylist.append(6)
@@ -29,32 +30,36 @@ def proc2(mylist):
 
 # Can you explain the results given by the print statements below?
 
+
 print "demonstrating proc"
 print list1     # prints [1,2,3,4,5]
 
-proc(list1) # adding list1 = [1,2,3,4,5] to [6,7] => [1,2,3,4,5,6,7]
+proc(list1)  # adding list1 = [1,2,3,4,5] to [6,7] => [1,2,3,4,5,6,7]
 print list1  # print [1,2,3,4,5]
 
 print
 print "demonstrating proc2"
 print list2  # prints [1,2,3,4,5]
-proc2(list2) # appending list2 = [1,2,3,4,5] with (6) and then (7) => [1,2,3,4,5,6,7]
-print list2 # so this should print [1,2,3,4,5,6,7]
+# appending list2 = [1,2,3,4,5] with (6) and then (7) => [1,2,3,4,5,6,7]
+proc2(list2)
+print list2  # so this should print [1,2,3,4,5,6,7]
 
 # Python has a special assignment syntax: +=.  Here is an example:
 
-list3 = [1,2,3,4,5]
+list3 = [1, 2, 3, 4, 5]
+
 
 def proc3(mylist):
     mylist += [6, 7]
     return mylist
+
 
 print proc3(list3)
 
 # Does this behave like list1 = list1 + [6,7] or list2.append([6,7])? Write a
 # procedure, proc3 similar to proc and proc2, but for +=.
 
-#==========================================================================
+# ==========================================================================
 
 # Let's learn a little bit of Data Analysis and how we can use
 # loops and lists to create, aggregate, and summarize data
@@ -62,20 +67,18 @@ print proc3(list3)
 # For the part 1, we'll learn a basic way of creating data using
 # Python's random number generator.
 
-# To create a random integer from 0 to 10, we first import the 
+# To create a random integer from 0 to 10, we first import the
 # "random" module
 
-import random
 
 # We then print a random integer using the random.randint(start, end) function
-print "Random number generated: " + str(random.randint(0,10))
+print "Random number generated: " + str(random.randint(0, 10))
 
-# Remember that if we want to concatenate a string and a number, we need to convert the 
+# Remember that if we want to concatenate a string and a number, we need to convert the
 # integer into a string using the str() function
 
-# We now want to create a list filled with random numbers. The list should be 
+# We now want to create a list filled with random numbers. The list should be
 # of length 20
-
 
 
 # Write code here and use a while loop to populate this list of random integers. A crucial
@@ -85,19 +88,47 @@ list_length = 20
 
 i = 0
 while i < list_length:
-        random_list.append(random.randint(0,10))
-        i+=1
+    random_list.append(random.randint(0, 10))
+    i += 1
 
 # When we print this list, we should get a list of random integers such as:
 # [7, 5, 1, 6, 4, 1, 0, 6, 6, 8, 1, 1, 2, 7, 5, 10, 7, 8, 1, 3]
 
 print random_list
 
-#alternative code by answer
+# alternative code by answer
 random_list = []
 list_length = 20
 
 while len(random_list) < list_length:
-   random_list.append(random.randint(0,10))
+    random_list.append(random.randint(0, 10))
+
+#================================================================================
+# Now, we want to ask ourselves the question: How many occurrences of
+# the number 9 appear in our randomly made list?
+#
+# For example, if we have a list: [2,8,9,9,4,5,9], we want to figure out
+# how to loop through the list and count the number of occurrences of the
+# number 9. In the example list above, the number 9 occurs three times.
 
 
+# 1. Create random list of integers using while loop
+random_list = []
+list_length = 20
+count = 0
+while len(random_list) < list_length:
+    random_list.append(random.randint(0, 10))
+
+# Write code here to loop through the list and count all occurrences
+# of the number 9. Note that `if` statements and `while` loops will help you solve
+# this problem.
+index = 0
+while index < len(random_list):
+        if random_list[index] == 9:
+                count +=1
+        index +=1
+
+# Test: If the `while` loop we wrote works, we should manually count
+# how many times the number 9 is present in the list.
+print random_list
+print count
