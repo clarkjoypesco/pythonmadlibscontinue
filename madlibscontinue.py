@@ -331,15 +331,19 @@ def product_list(list_of_numbers):
         return product
 
 
-
+def product_list2(list_of_numbers):
+        product = 1
+        for i in list_of_numbers:
+                product *= i
+        return product
 
 
 
 print product_list([9])
 #>>> 9
 
-print product_list([1,2,3,4])
+print product_list2([1,2,3,4])
 #>>> 24
 
-#print product_list([])
+print product_list([])
 #>>> 1
