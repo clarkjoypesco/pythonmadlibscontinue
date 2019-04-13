@@ -347,3 +347,28 @@ print product_list2([1,2,3,4])
 
 print product_list([])
 #>>> 1
+
+
+# Define a procedure, greatest,
+# that takes as input a list
+# of positive numbers, and
+# returns the greatest number
+# in that list. If the input
+# list is empty, the output
+# should be 0.
+
+def greatest(list_of_numbers):
+        greatest = 0
+        index = 0
+        while index < len(list_of_numbers):
+                if greatest < list_of_numbers[index]:
+                        greatest = list_of_numbers[index]
+                index+=1
+        return greatest
+
+
+
+print greatest([4,23,1])
+#>>> 23
+print greatest([])
+#>>> 0
