@@ -372,3 +372,43 @@ print greatest([4,23,1])
 #>>> 23
 print greatest([])
 #>>> 0
+print greatest([44,23,55])
+print greatest([44,23,11])
+
+
+# Let's play around with one more string method: string.split(), which
+# splits a string into a list of substrings, and returns it as a new list. 
+# Assign list_of_words1 to the split string1 and list_of_words2 to the split string2.
+
+string1 = "Yesterday, PERSON and I went to the PLACE. On our way, we saw a ADJECTIVE NOUN on a bike."
+string2 = "PLACE is located on the ADVERB side of Dublin, near the mainly ADJECTIVE areas of PLACE."
+list_of_words1 = string1.split() #fill this in
+list_of_words2 = string2.split() #fill this in
+
+print list_of_words1
+print list_of_words2
+
+
+
+# Here's another chance to practice your for loop skills. Write code for the 
+# function word_in_pos (meaning word in parts_of_speech), which takes in a string 
+# word and a list parts_of_speech as inputs. If there is a word in parts_of_speech
+# that is a substring of the variable word, then return that word in parts_of_speech, 
+# else return None.
+
+
+def word_in_pos(word, parts_of_speech):
+        for parts in parts_of_speech:
+                if parts == word:
+                        return parts
+
+    # your code here
+
+
+test_cases = ["NOUN", "FALSE", "<<@PERSON><", "PLURALNOUN"]
+parts_of_speech = ["PERSON", "PLURALNOUN", "NOUN"]
+
+print word_in_pos(test_cases[0], parts_of_speech)
+print word_in_pos(test_cases[1], parts_of_speech)
+print word_in_pos(test_cases[2], parts_of_speech)
+print word_in_pos(test_cases[3], parts_of_speech)
