@@ -397,20 +397,58 @@ print list_of_words2
 # else return None.
 
 
-def word_in_pos(word, parts_of_speech):
-        for parts in parts_of_speech:
-                if parts in word:
-                        return parts
+# def word_in_pos(word, parts_of_speech):
+#         for parts in parts_of_speech:
+#                 if parts in word:
+#                         return parts
 
-        return None
+#         return None
 
     # your code here
 
 
-test_cases = ["NOUN", "FALSE", "<<@PERSON><", "PLURALNOUN"]
-parts_of_speech = ["PERSON", "PLURALNOUN", "NOUN"]
+# test_cases = ["NOUN", "FALSE", "<<@PERSON><", "PLURALNOUN"]
+# parts_of_speech = ["PERSON", "PLURALNOUN", "NOUN"]
 
-print word_in_pos(test_cases[0], parts_of_speech)
-print word_in_pos(test_cases[1], parts_of_speech)
-print word_in_pos(test_cases[2], parts_of_speech)
-print word_in_pos(test_cases[3], parts_of_speech)
+# print word_in_pos(test_cases[0], parts_of_speech)
+# print word_in_pos(test_cases[1], parts_of_speech)
+# print word_in_pos(test_cases[2], parts_of_speech)
+# print word_in_pos(test_cases[3], parts_of_speech)
+
+
+# Write code for the function play_game, which takes in as inputs parts_of_speech
+# (a list of acceptable replacement words) and ml_string (a string that 
+# can contain replacement words that are found in parts_of_speech). Your play_game
+# function should return the joined list replaced, which will have the same structure
+# as ml_string, only that replacement words are swapped out with "corgi", since this
+# program cannot replace those words with user input. 
+
+parts_of_speech  = ["PLACE", "PERSON", "PLURALNOUN", "NOUN"]
+
+test_string = """This is PLACE, no NOUN named PERSON, We have so many PLURALNOUN around here."""
+
+def word_in_pos(word, parts_of_speech):
+    for pos in parts_of_speech:
+        if pos in word:
+            return pos
+    return None
+        
+def play_game(ml_string, parts_of_speech):    
+    replaced = []
+    # your code here
+    list = ml_string.split()
+    for item in list:
+          replacement =  word_in_pos(item, parts_of_speech)
+          if replacement != None:
+                  item = item.replace(replacement,'corgi')
+                  replaced.append(item)
+          else:
+                  replaced.append(item)
+    replaced = " ".join(replaced)
+    return replaced
+    
+
+
+
+
+print play_game(test_string, parts_of_speech) 
