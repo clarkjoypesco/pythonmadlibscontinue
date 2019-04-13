@@ -399,8 +399,10 @@ print list_of_words2
 
 def word_in_pos(word, parts_of_speech):
         for parts in parts_of_speech:
-                if parts == word:
+                if parts in word:
                         return parts
+
+        return None
 
     # your code here
 
