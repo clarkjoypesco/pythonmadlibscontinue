@@ -93,4 +93,11 @@ while i < list_length:
 
 print random_list
 
+#alternative code by answer
+random_list = []
+list_length = 20
+
+while len(random_list) < list_length:
+   random_list.append(random.randint(0,10))
+
 
