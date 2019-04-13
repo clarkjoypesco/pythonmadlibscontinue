@@ -437,13 +437,14 @@ def play_game(ml_string, parts_of_speech):
     replaced = []
     # your code here
     list = ml_string.split()
-    for item in list:
-          replacement =  word_in_pos(item, parts_of_speech)
+    for word in list:
+          replacement =  word_in_pos(word, parts_of_speech)
           if replacement != None:
-                  item = item.replace(replacement,'corgi')
-                  replaced.append(item)
+                  user_input = raw_input('Type in a: ' + replacement)
+                  word = word.replace(replacement,user_input)
+                  replaced.append(word)
           else:
-                  replaced.append(item)
+                  replaced.append(word)
     replaced = " ".join(replaced)
     return replaced
     
