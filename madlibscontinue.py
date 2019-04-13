@@ -191,20 +191,23 @@ i= 0
 count = 0
 #Write code here to loop through every number in random_list and
 #update count_list appropriately
-while i < len(count_list):
-        count_list[i] = random_list[i]
-        #0
-        j = 0
-        while j < len(random_list):
-                if count_list[i] == random_list[j]:
-                        count +=1
-                j+=1
-        count_list[i] = count
-        count = 0
+# while i < len(count_list):
+#         count_list[i] = random_list[i]
+#         #0
+#         j = 0
+#         while j < len(random_list):
+#                 if count_list[i] == random_list[j]:
+#                         count +=1
+#                 j+=1
+#         count_list[i] = count
+#         count = 0
     
-        i+=1
+#         i+=1
      
-
+while index < len(random_list):
+  number = random_list[index]
+  count_list[number] = count_list[number] + 1
+  index = index + 1
 
 
 
